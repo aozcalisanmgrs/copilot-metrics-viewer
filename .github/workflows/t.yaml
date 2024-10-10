@@ -27,5 +27,5 @@ jobs:
       with:
         app-name: 'gitmetrics'
         slot-name: 'test'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
         images: 'ghcr.io/aozcalisanmgrs/copilot-metrics-viewer:latest'
