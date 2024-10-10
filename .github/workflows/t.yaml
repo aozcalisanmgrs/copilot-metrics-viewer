@@ -1,4 +1,4 @@
-name: Build and deploy container app to Azure Web App - copilot-metrics-viewer
+name: copilot-metrics-viewer
 
 on:
   workflow_dispatch:
@@ -19,8 +19,8 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t ghcr.io/myuser/copilot-metrics-viewer:latest .
-        docker push ghcr.io/myuser/copilot-metrics-viewer:latest
+        docker build -t ghcr.io/aozcalisanmgrs/copilot-metrics-viewer:latest .
+        docker push ghcr.io/aozcalisanmgrs/copilot-metrics-viewer:latest
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
@@ -28,4 +28,4 @@ jobs:
         app-name: 'gitmetrics'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
-        images: 'ghcr.io/myuser/copilot-metrics-viewer:latest'
+        images: 'ghcr.io/aozcalisanmgrs/copilot-metrics-viewer:latest'
