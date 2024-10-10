@@ -26,6 +26,6 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'gitmetrics'
-        slot-name: 'production'
+        slot-name: 'test'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
         images: 'ghcr.io/aozcalisanmgrs/copilot-metrics-viewer:latest'
